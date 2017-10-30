@@ -1,5 +1,3 @@
-package vm;
-
 /**
  * Created by chenchuk on 10/14/17.
  */

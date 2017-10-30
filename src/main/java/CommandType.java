@@ -1,5 +1,3 @@
-package vm;
-
 public enum CommandType {
     C_ARITHMETIC,
     C_PUSH,

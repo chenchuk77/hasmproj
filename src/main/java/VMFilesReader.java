@@ -1,5 +1,3 @@
-package vm;
-
 //
 // tester, delete me
 //
