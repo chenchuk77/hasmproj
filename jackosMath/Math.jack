@@ -1,0 +1,193 @@
+class Math {
+
+// function void init(): for internal use only.
+// function int abs(int x): returns the absolute value of x.
+// function int multiply(int x, int y): returns the product of x and y.
+// function int divide(int x, int y): returns the integer part of x/y.
+// function int min(int x, int y): returns the minimum of x and y.
+// function int max(int x, int y): returns the maximum of x and y.
+// function int sqrt(int x): returns the integer part of the square root of x.
+
+	static Array twoToThe;
+
+	// init and set global values for the class
+	function void init(){
+        let twoToThe = Array.new(16);
+		let twoToThe[0]  = 1;
+		let twoToThe[1]  = 2;
+		let twoToThe[2]  = 4;
+		let twoToThe[3]  = 8;
+		let twoToThe[4]  = 16;
+		let twoToThe[5]  = 32;
+		let twoToThe[6]  = 64;
+		let twoToThe[7]  = 128;
+		let twoToThe[8]  = 256;
+		let twoToThe[9]  = 512;
+		let twoToThe[10] = 1024;
+		let twoToThe[11] = 2048;
+		let twoToThe[12] = 4096;
+		let twoToThe[13] = 8192;
+		let twoToThe[14] = 16384;
+		return;
+	}
+
+	// returns absolute value of x (distance from 0)
+    function int abs(int x){
+        if (x < 0){
+        	let x = x * (-1);
+        }
+        return x;
+    }
+
+
+	// non API
+    function int shiftLeft(int x){
+        let x = x + x;
+        return x;
+    }
+
+	// Returns true if the j-th bit of the integer x is 1 and false otherwise.
+    function boolean bit(int x, int j){
+    	// x && 2^j
+    	var int rv;
+    	let rv = (x & twoToThe[j]);
+    	if (rv = 0){
+    		return false;
+    	}
+    	return true;
+    }
+
+    // returns x*y , good complexity of O(logN)
+    function int multiply(int x, int y){
+    	var int sum;
+    	var int bitId;
+    	var int shiftedX;
+
+    	let sum = 0;
+
+    	// init for first iter
+		let bitId = 0;
+    	let shiftedX = x; // starting point
+
+    	// looping through all digits, adding shifted-x if y-digit=1
+    	while (bitId < 15){
+            //do Output.printInt(bitId);
+
+    		if (Math.bit(y, bitId)){
+    			//do Output.printInt(bitId);
+    			let sum = sum + shiftedX;
+
+    		}
+    		let shiftedX = Math.shiftLeft(shiftedX);
+    		let bitId = bitId + 1;
+    	}
+    	return sum;
+    }
+
+    // returns x/y (integer division)
+    function int divide(int x, int y){
+    	if ((x<0 & y>0) | (x>0 & y<0)){
+    		// negative response
+    		return (-1) * Math.dividePositives(Math.abs(x), Math.abs(y));
+    	}
+    	return Math.dividePositives(Math.abs(x), Math.abs(y));
+
+    }
+
+    // non API
+    // returns x/y (positive integer division)
+    function int dividePositives(int x, int y){
+    	var int q;
+
+    	if (y > x | y < 0){
+    		return 0;
+    	}
+    	let q = Math.divide (x,  2 * y );
+    	if (x-( 2 * q * y ) < y){
+			return 2 * q;
+    	} else {
+			return (2 * q) + 1;
+    	}
+    }
+
+
+
+
+
+    // // returns x/y (integer division)
+    // function int sqrt(int x){
+    // 	var int y;
+
+    // 	let j = 
+
+    // }
+
+    // refactored from java:
+    // https://stackoverflow.com/questions/3766020/binary-search-to-compute-square-root-java
+    function int sqrt2(int x) {
+        var int start, end, mid;
+
+        if (x = 0 | x = 1) {
+            return x;
+        }
+
+        let start = 1;
+        let end = x / 2;
+
+        while(~(start > end)) {
+            let mid = start + ((end - start) / 2);
+            if(mid = x / mid) {
+                return mid;
+            }
+            if(mid < x / mid) {
+                let start = mid + 1;
+            } else {
+                let end = mid - 1;
+            }
+        }
+        return start - 1;
+    }
+
+
+	function int sqrt(int x) {
+  		var int low, mid, high;
+  		let low = 0;
+  		let high = x+1;
+  		while (high-low > 1){
+		    let mid = (low+high) / 2;
+		    if (~(mid*mid > x)){
+		    	let low = mid;
+		    } else{
+		    	let high = mid;
+		    }
+  		}
+		return low;
+	}
+
+
+
+    // returns the max
+    function int max(int x, int y){
+        if (x > y){ return x; }
+        return y;
+    }
+
+    // returns the min
+    function int min(int x, int y){
+        if (x > y){ return y; }
+        return x;
+    }
+
+    // non API
+    // returns x*y , bad complexity of O(N)
+    function int multiplySlow(int x, int y){
+        var int sum;
+        let sum = 0;
+        while (x > 0){
+        	let sum = sum + y;
+        	let x = x - 1;
+        }
+        return sum;
+    }
+
+}

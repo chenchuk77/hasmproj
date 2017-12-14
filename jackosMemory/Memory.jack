@@ -1,0 +1,160 @@
+ class Memory {
+
+    // heap : 2048 - 16383
+
+    // enables access areas outside the heap
+    static Array ram;
+
+    static Array heap;
+    static int freeList;    // points to the head of allocation list
+
+    // init and set global values for the class
+    function void init(){
+        // weak typing allow creates an array and initialize directly with addr
+        // prevent the needs to call Array ctor that will request maloc, infinitely ...
+        let ram = 0;
+        let heap = 2048;      // jack spec.
+        let freeList = 2048;  // all heap is free
+        let heap[0] = 0;      // next
+        let heap[1] = 14335;  // len
+        return;
+    }
+
+    // returns the RAM value at the given address.
+    function int peek(int address) {
+        return ram[address];
+    }
+    
+    // sets the RAM value at the given address to the given value.
+    function void poke(int address, int value) {
+        let ram[address] = value;
+    }
+
+    //----------------------------------------------------------------------------------
+    // algorithm is looking for first allocatable space by searching a linked list
+    // when found, it checks the next and prev to manage the list in few cases :
+    //
+    // if head:     only remove from list by moving freeList forward
+    // if not head: chaining the prev to the next, unchaining this
+    // if tail:     allocating space and may update prev if tail is not the only chain
+    //
+    //----------------------------------------------------------------------------------
+    
+    //finds an available RAM block of the given size and returns a reference to its base address.
+    function Array alloc(int size) {
+        var Array next, prev, block;
+
+        let next = freeList;   // starting poing at head of list
+        let prev = freeList;
+
+        // while next is not possible, (loop until possible found)
+        while (next[1] < size+2) {
+            // if tail, error
+            if (next[0] = 0) {
+                Output.printString("ERROR: no free sapace");
+                do Sys.error("6");
+            }
+            let prev = next;        // save prev
+            let next = prev[0];     // check next
+        }
+        // next is possible
+        // if tail - need to alloc or fail
+        if (next[0] = 0) {
+            let block = next;
+            let next = next + size;
+            let next[0] = block[0];         // 0
+            let next[1] = block[1] - size;  // free
+
+            // if tail is head, need to move the head after the block
+            if (prev = next){
+                let freeList = next;
+            } else
+            // at least 1 more chain, need to update prev ref after allocating a block
+                let prev[0] = next;
+            }
+            do Memory.clear(block);
+            return block;
+        }
+        // if head - just remove and point to next
+        if (next = freeList) {
+            let block = freeList;
+            let freeList = freeList[0];
+            do Memory.clear(block);
+            return block;
+        }
+
+        // if not head and not tail, need to chain prev to next-next
+        let block = freeList;
+        let prev[0] = next[0];  // unchain from freelist and return the block
+        do Memory.clear(block);
+        return block;
+    }
+
+    // private
+    function void clear(Array block){
+        var int i;
+        let i = 0;
+        while (i < size)
+            block[i] = 0
+            i++
+
+    }
+
+    // private
+    function void clear(Array block){
+        var int i;
+        let i = 0;
+        while (i < size)
+            block[i] = 0
+            i++
+
+    }
+
+
+    
+    // finds an available RAM block of the given size and returns a reference to its base address.
+    // function Array alloc(int size){
+    //     var int block;
+
+    //     let block = freeList;        // this is the array to return
+    //     freeList = freeList + size;  // moving forward the 
+
+    //     // setting the last list chain with the new value (val-size)
+    //     freeList[0] = 0;     // pointer to end of list
+    //     freeList[1] = block[1] - size;     // pointer to end of list
+
+    //     //freeList = freeList + size + 2  // (n,n,n...n, ptr, len)
+
+    //     let block = free;
+    //     let free = free + size;
+    //     return block;
+
+    // }
+
+    // de-allocates the given object (cast as an array) by making it available for future allocations.
+    function void deAlloc(Array o){
+
+    } 
+
+
+
+        let a = Keyboard.readInt("a = ");
+    	do Output.println();
+        let b = Keyboard.readInt("b = ");
+    	do Output.println();
+
+
+        do Math2.init();
+        //do Output.printInt(Math2.multiply(a, b));
+    	//do Output.println();
+        // do Output.printInt(Math2.divide(a, b));
+        // do Output.printInt(Math2.abs(a));
+        // do Output.printInt(Math2.abs(b));
+
+        do Output.printInt(Math2.sqrt2(a));
+    	do Output.println();
+        do Output.printInt(Math2.sqrt2(b));
+    	do Output.println();
+        return;
+    }
+}
