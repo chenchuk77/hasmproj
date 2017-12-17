@@ -1,15 +1,26 @@
- class Memory {
+// written by Chen Alkabets / chenchuk@gmail.com
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/12/Memory.jack
 
+/**
+ * This library provides two services: direct access to the computer's main
+ * memory (RAM), and allocation and recycling of memory blocks. The Hack RAM
+ * consists of 32,768 words, each holding a 16-bit binary number.
+ */ 
+class Memory {
     // heap : 2048 - 16383
-
     // enables access areas outside the heap
     static Array ram;
-
+    //static boolean debugMode;
     static Array heap;
     static int freeList;    // points to the head of allocation list
 
-    // init and set global values for the class
+
+    /** Initializes the class. */
     function void init(){
+        //let debugMode = true;
         // weak typing allow creates an array and initialize directly with addr
         // prevent the needs to call Array ctor that will request maloc, infinitely ...
         let ram = 0;
@@ -20,16 +31,20 @@
         return;
     }
 
-    // returns the RAM value at the given address.
+    /** Returns the RAM value at the given address. */
     function int peek(int address) {
         return ram[address];
     }
-    
-    // sets the RAM value at the given address to the given value.
+
+    /** Sets the RAM value at the given address to the given value. */
     function void poke(int address, int value) {
         let ram[address] = value;
+        return;
     }
 
+    /** Finds an available RAM block of the given size and returns
+     *  a reference to its base address. */
+   function int alloc(int size) {
     //----------------------------------------------------------------------------------
     // algorithm is looking for first allocatable space by searching a linked list
     // when found, it checks the next and prev to manage the list in few cases :
@@ -40,8 +55,6 @@
     //
     //----------------------------------------------------------------------------------
     
-    //finds an available RAM block of the given size and returns a reference to its base address.
-    function Array alloc(int size) {
         var Array next, prev, block;
 
         let next = freeList;   // starting poing at head of list
@@ -51,110 +64,73 @@
         while (next[1] < size+2) {
             // if tail, error
             if (next[0] = 0) {
-                Output.printString("ERROR: no free sapace");
                 do Sys.error("6");
             }
             let prev = next;        // save prev
             let next = prev[0];     // check next
+
         }
+
         // next is possible
-        // if tail - need to alloc or fail
+        // if tail - must alloc or fail
+        // for alloc(3), need to have block of 5 (ptr,size,data*3)
+        //
         if (next[0] = 0) {
-            let block = next;
-            let next = next + size;
-            let next[0] = block[0];         // 0
-            let next[1] = block[1] - size;  // free
+            let block = next+2 ;                 // [0] and [1] used (ptr, size)
+            let next = next+2 + size;
+            let next[0] = freeList[0];           // 0
+            let next[1] = freeList[1] - size-2;  // free
+            let freeList[1] = size ;             // add size before alloc. will be used by dealloc
 
             // if tail is head, need to move the head after the block
-            if (prev = next){
+            if (prev = freeList){
                 let freeList = next;
-            } else
-            // at least 1 more chain, need to update prev ref after allocating a block
+            } else {
+            // need to update prev chain ref after allocating a block
                 let prev[0] = next;
             }
-            do Memory.clear(block);
-            return block;
+            return Memory.initialized(block);
         }
         // if head - just remove and point to next
         if (next = freeList) {
-            let block = freeList;
+            let block = freeList+2;          // [0] and [1] used (ptr, size)
             let freeList = freeList[0];
-            do Memory.clear(block);
-            return block;
+            return Memory.initialized(block);
         }
 
         // if not head and not tail, need to chain prev to next-next
-        let block = freeList;
+        let block = next+2 ;                 // [0] and [1] used (ptr, size)
         let prev[0] = next[0];  // unchain from freelist and return the block
-        do Memory.clear(block);
+        return Memory.initialized(block);
+    }
+
+    // private non-API returns array initied with [0,0,0,0...0]
+    function Array initialized(Array block){
+        var int i, size;
+        // heap offset is 2048. size writen 1 byte before the block
+        let size = Memory.peek(block - 1);     
+        let i = 0;
+        while (i < size) {
+            let block[i] = 0;
+            let i = i + 1;
+        }
         return block;
     }
 
-    // private
-    function void clear(Array block){
-        var int i;
-        let i = 0;
-        while (i < size)
-            block[i] = 0
-            i++
+    /** De-allocates the given object (cast as an array) by making
+     *  it available for future allocations. */
 
-    }
-
-    // private
-    function void clear(Array block){
-        var int i;
-        let i = 0;
-        while (i < size)
-            block[i] = 0
-            i++
-
-    }
-
-
-    
-    // finds an available RAM block of the given size and returns a reference to its base address.
-    // function Array alloc(int size){
-    //     var int block;
-
-    //     let block = freeList;        // this is the array to return
-    //     freeList = freeList + size;  // moving forward the 
-
-    //     // setting the last list chain with the new value (val-size)
-    //     freeList[0] = 0;     // pointer to end of list
-    //     freeList[1] = block[1] - size;     // pointer to end of list
-
-    //     //freeList = freeList + size + 2  // (n,n,n...n, ptr, len)
-
-    //     let block = free;
-    //     let free = free + size;
-    //     return block;
-
-    // }
-
-    // de-allocates the given object (cast as an array) by making it available for future allocations.
+    // structured block (ptr,size,n*) already done when alloc called.
+    // when dealloc called, this chain need to return to free list
     function void deAlloc(Array o){
-
+        var Array head;
+        // adding this chain to head of free list
+        let head = o - 2;      // returned block address -1 = size
+                               // returned block address -2 = ptr
+        let head[0] = freeList;
+        let freeList = head;
+        return;
     } 
 
-
-
-        let a = Keyboard.readInt("a = ");
-    	do Output.println();
-        let b = Keyboard.readInt("b = ");
-    	do Output.println();
-
-
-        do Math2.init();
-        //do Output.printInt(Math2.multiply(a, b));
-    	//do Output.println();
-        // do Output.printInt(Math2.divide(a, b));
-        // do Output.printInt(Math2.abs(a));
-        // do Output.printInt(Math2.abs(b));
-
-        do Output.printInt(Math2.sqrt2(a));
-    	do Output.println();
-        do Output.printInt(Math2.sqrt2(b));
-    	do Output.println();
-        return;
-    }
 }
+
