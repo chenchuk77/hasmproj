@@ -59,6 +59,8 @@ class Screen {
         return;
     }
 
+
+
     /** Draws the (x,y) pixel, using the current color. */
     function void drawPixel(int x, int y) {
         var int address, value, mask;
