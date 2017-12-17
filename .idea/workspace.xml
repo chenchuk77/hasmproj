@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="24997355-a7c8-40ce-aeb6-55d0219dc477" name="Default" comment="math: need to handle sqrt&#10;memory: alloc implemented but not tested">
+    <list default="true" id="24997355-a7c8-40ce-aeb6-55d0219dc477" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jackosMemory/Memory.jack" afterPath="$PROJECT_DIR$/jackosMemory/Memory.jack" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jackosScreen/Screen.jack" afterPath="$PROJECT_DIR$/jackosScreen/Screen.jack" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,11 +28,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.jack" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.jack" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jackosScreen/Main.jack">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="147">
               <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Math.vm" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jackosScreen/Math.vm">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Screen.jack" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/jackosScreen/Screen.jack">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="75" column="14" lean-forward="false" selection-start-line="75" selection-start-column="14" selection-end-line="75" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Memory.vm" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jackosScreen/Memory.vm">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -156,8 +186,8 @@
         <option value="$PROJECT_DIR$/jackosMath/Main.jack" />
         <option value="$PROJECT_DIR$/jackosMath/Math.jack" />
         <option value="$PROJECT_DIR$/jackosMemory/Memory.jack" />
-        <option value="$PROJECT_DIR$/jackosScreen/Screen.jack" />
         <option value="$PROJECT_DIR$/jackosScreen/Main.jack" />
+        <option value="$PROJECT_DIR$/jackosScreen/Screen.jack" />
       </list>
     </option>
   </component>
@@ -978,7 +1008,7 @@
       <workItem from="1510783987139" duration="7969000" />
       <workItem from="1510998949777" duration="40129000" />
       <workItem from="1511467136858" duration="103525000" />
-      <workItem from="1512811815746" duration="41553000" />
+      <workItem from="1512811815746" duration="41661000" />
     </task>
     <task id="LOCAL-00001" summary="1. adding js error handling&#10;2. add idea to .gitignore">
       <created>1508505749574</created>
@@ -1127,11 +1157,32 @@
       <option name="project" value="LOCAL" />
       <updated>1513277298835</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="memory : done and tested">
+      <created>1513527351873</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1513527351873</updated>
+    </task>
+    <task id="LOCAL-00023" summary="screen : done not working">
+      <created>1513527383864</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1513527383864</updated>
+    </task>
+    <task id="LOCAL-00024" summary="screen : done not working">
+      <created>1513527419813</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1513527419813</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="433431000" />
+    <option name="totallyTimeSpent" value="433539000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1274,7 +1325,9 @@
     <MESSAGE value="successful compilation of Average&#10;( strings amd arrays )" />
     <MESSAGE value="saving master" />
     <MESSAGE value="math: need to handle sqrt&#10;memory: alloc implemented but not tested" />
-    <option name="LAST_COMMIT_MESSAGE" value="math: need to handle sqrt&#10;memory: alloc implemented but not tested" />
+    <MESSAGE value="memory : done and tested" />
+    <MESSAGE value="screen : done not working" />
+    <option name="LAST_COMMIT_MESSAGE" value="screen : done not working" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1306,7 +1359,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Square/SquareGame.jack" />
     <entry file="file://$PROJECT_DIR$/Square/Square.vm" />
     <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/lang/String.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -1672,26 +1724,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jackosScreen/Math.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jackosScreen/Keyboard.vm">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jackosScreen/Screen.jack">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="79" column="12" lean-forward="true" selection-start-line="79" selection-start-column="12" selection-end-line="79" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -1716,6 +1752,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jackosScreen/Math.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jackosScreen/Memory.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jackosScreen/Screen.jack">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="75" column="14" lean-forward="false" selection-start-line="75" selection-start-column="14" selection-end-line="75" selection-end-column="14" />
           <folding />
         </state>
       </provider>
