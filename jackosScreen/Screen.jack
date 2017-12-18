@@ -63,15 +63,24 @@ class Screen {
 
     /** Draws the (x,y) pixel, using the current color. */
     function void drawPixel(int x, int y) {
-        var int address, value, mask;
-        //do Output.printString("drawPixel called");do Output.println();
-
-        let address = 32 * y + (x / 16);  // 32*y is starting of row y
+        var int column, bit, address, value, mask;
+        // do Output.println();
+        // do Output.printString("drawPixel called");do Output.println();
+        // do Output.printString("x:");do Output.printInt(x);do Output.printString("        ");do Output.println();
+        // do Output.printString("y:");do Output.printInt(y);do Output.printString("        ");do Output.println();
+        // do Output.println();
+        let column = x/16;
+        // do Output.printString("column:");do Output.printInt(column);do Output.println();
+        let address = 32*y + column;  // 32*y is starting of row y
+        // do Output.printString("address:");do Output.printInt(address);do Output.println();
         let value = Memory.peek( 16384 + address ); 
-        let mask = twoToThe[15-x];        // masking only the bit to modify
-        
-        //do Output.printString("address");do Output.printInt(address);do Output.println();
-        //do Output.printString("value b4");do Output.printInt(value);do Output.println();
+        let bit = x - (16*column);
+        // do Output.printString("bit:");do Output.printInt(bit);do Output.println();
+        let mask = twoToThe[15-bit];        // masking only the bit to modify
+        // do Output.printString("mask:");do Output.printInt(mask);do Output.println();
+        // do Output.printString("address");do Output.printInt(address);do Output.println();
+        // do Output.printString("value b4");do Output.printInt(value);do Output.println();
+        // do Output.printString("value b4:");do Output.printInt(value);do Output.println();
 
         if (black){
             // black is turning on the bit by OR (0000010000)
@@ -80,37 +89,46 @@ class Screen {
             // white is turning off the bit by AND (11111011111)
             let value = value & (~(mask));
         }   
+        // do Output.printString("value after:");do Output.printInt(value);do Output.println();
+
         //do Output.printString("value after");do Output.printInt(value);do Output.println();
-        //do Memory.poke(16384 + address, value);
+        do Memory.poke(16384 + address, value);
+        // do Output.printString("(x:");do Output.printInt(x);do Output.printString("-");do Output.printInt(x/16);
+        // do Output.printString("y:");do Output.printInt(y);
+        // do Output.printString(") ");
+        // do Output.println();
+        do Sys.wait(5000);
         return;    
     }
 
     /** Draws a line from pixel (x1,y1) to pixel (x2,y2), using the current color. */
     function void drawLine(int x1, int y1, int x2, int y2) {
-        var int x, y, dx, dy;
-        var int right, up, diff;
-        //do Output.printString("drawLine called");do Output.println();
+        //var int x, y, dx, dy;
+        var int dx, dy;
+        var int a, b, diff;
+        // do Output.printString("drawLine called");do Output.println();
+        // do Output.printString("x1:");do Output.printInt(x1);do Output.printString("        ");do Output.println();
+        // do Output.printString("y1:");do Output.printInt(y1);do Output.printString("        ");do Output.println();
 
-//        do Screen.drawLine(  0, 220, 100, 220);        // base line
- //   function void drawLine( x1,  y1, x2,  y2) {
-
-        let x = x1;
-        let y = y1;
         let dx = x2 - x1; //100
         let dy = y2 - y1; // 0
+        // do Output.printString("dx:");do Output.printInt(dx);do Output.printString("        ");do Output.println();
+        // do Output.printString("dy:");do Output.printInt(dy);do Output.printString("        ");do Output.println();
 
-        let right = 0;
-        let up = 0;
-        let diff = 0;
+        let a = 0;
+        let b = 0;
+        let diff = a*dy - b*dx;
+        // do Output.printString("diff:");do Output.printInt(diff);do Output.printString("        ");do Output.println();
 
-        while((~(right > dx)) & (~(up > dy))){
-        //do Output.printString("in while");do Output.println();
-            do Screen.drawPixel(x+right, y+up);
+        while((~(a > dx)) & (~(b > dy))){
+        // do Output.printString("in while");do Output.printString("        ");do Output.println();
+            do Screen.drawPixel(x1+a, y1+b);
             if (diff < 0){
-                let right = right + 1;
+                let a = a + 1;
                 let diff = diff + dy;
             }else{
-                let up = up + 1;
+                let b = b + 1;
+                // let diff = diff - dx;
                 let diff = diff - dx;
             }
         }
