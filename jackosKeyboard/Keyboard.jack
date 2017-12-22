@@ -8,8 +8,12 @@
  */
 class Keyboard {
 
+    static int kbmap;
+
     /** Initializes the keyboard. */
     function void init() {
+        let kbmap = 24576;
+        return;
     } 
 
     /**
@@ -33,6 +37,10 @@ class Keyboard {
      * F1 - F12 = 141 - 152
      */
     function char keyPressed() {
+        var int kb;
+        // returns 0 if no key pressed
+        let kb = Memory.peek(kbmap);
+        return kb;
     }
 
     /**								
@@ -41,6 +49,21 @@ class Keyboard {
      * of the pressed key.
      */
     function char readChar() {
+        var int x;
+        var char c;
+
+        // wait for press
+        while(Keyboard.keyPressed() = 0){
+            let x=0; // do nothing
+        }
+        let c = Keyboard.keyPressed();
+        // wait for release
+        while(~(Keyboard.keyPressed() = 0)){
+            let x=0; // do nothing
+        }
+        do Output.printChar(c);
+        return c;
+        
     }
 
     /**								
@@ -49,6 +72,29 @@ class Keyboard {
      * and returns its value. Also handles user backspaces.
      */
     function String readLine(String message) {
+        var char c;
+        var String s;
+
+        do Output.printString(message);
+        let s = new.String(64);
+
+        // read first char
+        let c = Keyboard.readChar();
+        // while not newline
+        while (~(c = 128)){
+
+            // backspace
+            if (c = 129){
+                do s.eraseLastChar();
+                do Output.backspace();
+            } else {
+                do s.appendChar(c);
+            }
+            // read rest chars
+            let c = Keyboard.readChar();
+        }
+        do Output.printString(s);
+        return s;
     }   
 
     /**								
@@ -58,5 +104,8 @@ class Keyboard {
      * entered text is detected). Also handles user backspaces. 
      */
     function int readInt(String message) {
+        var int s;
+        let s = 0;
+        return 0;
     }
 }
