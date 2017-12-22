@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24997355-a7c8-40ce-aeb6-55d0219dc477" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jackosString/String.jack" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jackosKeyboard/Keyboard.jack" afterPath="$PROJECT_DIR$/jackosKeyboard/Keyboard.jack" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jackosScreen/Screen.jack" afterPath="$PROJECT_DIR$/jackosScreen/Screen.jack" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -29,35 +29,8 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Screen.jack" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jackosScreen/Screen.jack">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="76" column="34" lean-forward="true" selection-start-line="76" selection-start-column="34" selection-end-line="76" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KeyboardTestOutput.gif" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jackosKeyboard/KeyboardTestOutput.gif">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Output.jack" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jackosOutput/Output.jack">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Main.jack" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jackosKeyboard/Main.jack">
+        <entry file="file://$PROJECT_DIR$/jackosString/Main.jack">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -66,48 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Keyboard.jack" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/jackosKeyboard/Keyboard.jack">
+      <file leaf-file-name="String.jack" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/jackosString/String.jack">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="106" column="50" lean-forward="false" selection-start-line="106" selection-start-column="50" selection-end-line="106" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OutputTestOutput.gif" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jackosOutput/OutputTestOutput.gif">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Math.vm" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jackosMemory/Math.vm">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Memory.jack" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jackosMemory/Memory.jack">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.jack" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jackosOutput/Main.jack">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="15" column="8" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+            <state relative-caret-position="78">
+              <caret line="125" column="36" lean-forward="true" selection-start-line="125" selection-start-column="36" selection-end-line="125" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -127,18 +63,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>writeFunctionCall</find>
-      <find>undeclared variable used</find>
-      <find>push argument 0</find>
-      <find>#</find>
-      <find>###</find>
-      <find>### ha</find>
-      <find>tor</find>
-      <find>pushThis</find>
-      <find>constructor</find>
-      <find>if (id2.equals(</find>
-      <find>moveSquare</find>
-      <find>ructo</find>
       <find>this</find>
       <find>writeVoidFunctionCall</find>
       <find>devide</find>
@@ -155,15 +79,27 @@
       <find>and</find>
       <find>te</find>
       <find>term</find>
-      <find>term()</find>
       <find>Math2</find>
+      <find>term()</find>
+      <find>modu</find>
+      <find>modulu</find>
+      <find>modul</find>
+      <find>%</find>
+      <find>m</find>
+      <find>,mod</find>
+      <find>mod</find>
+      <find>.mod</find>
+      <find>.d</find>
+      <find>.di</find>
+      <find>.divi</find>
+      <find>.divide</find>
     </findStrings>
     <replaceStrings>
       <replace>Math</replace>
     </replaceStrings>
     <dirStrings>
-      <dir>$PROJECT_DIR$</dir>
       <dir>$PROJECT_DIR$/src/main/java/fullcompiler</dir>
+      <dir>$PROJECT_DIR$</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -182,8 +118,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/fullcompiler/KeyWord.java" />
-        <option value="$PROJECT_DIR$/src/main/java/fullcompiler/JackTokenizer.java" />
         <option value="$PROJECT_DIR$/src/main/java/fullcompiler/VarType.java" />
         <option value="$PROJECT_DIR$/src/main/java/fullcompiler/Kind.java" />
         <option value="$PROJECT_DIR$/src/main/java/fullcompiler/DoubleSymbolTable.java" />
@@ -233,6 +167,8 @@
         <option value="$PROJECT_DIR$/jackosScreen/Screen.jack" />
         <option value="$PROJECT_DIR$/jackosOutput/Output.jack" />
         <option value="$PROJECT_DIR$/jackosKeyboard/Keyboard.jack" />
+        <option value="$PROJECT_DIR$/jackosString/String.jack" />
+        <option value="$PROJECT_DIR$/jackosString/Main.jack" />
       </list>
     </option>
   </component>
@@ -278,10 +214,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1967" />
-    <option name="y" value="26" />
-    <option name="width" value="1633" />
-    <option name="height" value="1054" />
+    <option name="x" value="2783" />
+    <option name="y" value="54" />
+    <option name="width" value="817" />
+    <option name="height" value="1026" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -364,21 +300,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Square" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gs-rest-service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hasmproj" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jackosKeyboard" />
+              <option name="myItemId" value="jackosString" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1025,7 +947,7 @@
       <workItem from="1510783987139" duration="7969000" />
       <workItem from="1510998949777" duration="40129000" />
       <workItem from="1511467136858" duration="103525000" />
-      <workItem from="1512811815746" duration="69249000" />
+      <workItem from="1512811815746" duration="74669000" />
     </task>
     <task id="LOCAL-00001" summary="1. adding js error handling&#10;2. add idea to .gitignore">
       <created>1508505749574</created>
@@ -1237,11 +1159,18 @@
       <option name="project" value="LOCAL" />
       <updated>1513931529597</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="keyboard class working, little bug with backspace during readString">
+      <created>1513933074544</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1513933074544</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="461127000" />
+    <option name="totallyTimeSpent" value="466547000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1253,7 +1182,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1967" y="26" width="1633" height="1054" extended-state="6" />
+    <frame x="2783" y="54" width="817" height="1026" extended-state="4" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1271,11 +1200,11 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2510776" sideWeight="0.31064904" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38111112" sideWeight="0.37094682" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4536638" sideWeight="0.48330182" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.4952741" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2510776" sideWeight="0.68935096" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21235035" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38111112" sideWeight="0.6290532" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4370947" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31573275" sideWeight="0.45557657" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1365,7 +1294,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1. add vm implementation, 1s working commit" />
     <MESSAGE value="all arithmetic commands parsed and assembly generated successfully.&#10;adding unique id in loops to avoid collisions" />
     <MESSAGE value="add example strings&#10;passed test of examples&#10;clear output" />
     <MESSAGE value="passed the 5 test : 3 memory , 2 stack." />
@@ -1390,7 +1318,8 @@
     <MESSAGE value="output class working complete" />
     <MESSAGE value="keyboard class starting" />
     <MESSAGE value="keyboard class problem, this is best version so far" />
-    <option name="LAST_COMMIT_MESSAGE" value="keyboard class problem, this is best version so far" />
+    <MESSAGE value="keyboard class working, little bug with backspace during readString" />
+    <option name="LAST_COMMIT_MESSAGE" value="keyboard class working, little bug with backspace during readString" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1422,46 +1351,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/jackosMath/Keyboard.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Square/Math.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fullcompiler/JackCompiler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jackosMath/Array.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jackosMath/Main.vm">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1638,22 +1527,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jackosScreen/Math.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jackosScreen/Main.jack">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jackosOutput/jackosOutput/Sys.vm">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1739,14 +1612,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jackosOutput/Output.jack">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jackosInput/String.vm">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1787,26 +1652,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jackosKeyboard/Keyboard.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jackosKeyboard/Main.jack">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jackosScreen/Screen.jack">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="76" column="34" lean-forward="true" selection-start-line="76" selection-start-column="34" selection-end-line="76" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -1816,10 +1665,90 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/jackosKeyboard/Keyboard.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jackosString/Sys.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Square/Main.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="11" lean-forward="true" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jackosScreen/Output.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/jackosKeyboard/Keyboard.jack">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="106" column="50" lean-forward="false" selection-start-line="106" selection-start-column="50" selection-end-line="106" selection-end-column="50" />
+        <state relative-caret-position="-1008">
+          <caret line="21" column="6" lean-forward="true" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jackosOutput/Output.jack">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="56" column="41" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jackosScreen/Screen.jack">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1008">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jackosScreen/Math.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jackosScreen/Main.jack">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jackosString/Main.jack">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jackosString/String.jack">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="125" column="36" lean-forward="true" selection-start-line="125" selection-start-column="36" selection-end-line="125" selection-end-column="36" />
           <folding />
         </state>
       </provider>
