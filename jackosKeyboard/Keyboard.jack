@@ -14,7 +14,7 @@ class Keyboard {
     function void init() {
         let kbmap = 24576;
         return;
-    } 
+    }
 
     /**
      * Returns the character of the currently pressed key on the keyboard;
@@ -43,9 +43,9 @@ class Keyboard {
         return kb;
     }
 
-    /**								
+    /**
      * Waits until a key is pressed on the keyboard and released,
-     * then echoes the key to the screen, and returns the character 
+     * then echoes the key to the screen, and returns the character
      * of the pressed key.
      */
     function char readChar() {
@@ -63,10 +63,10 @@ class Keyboard {
         }
         do Output.printChar(c);
         return c;
-        
+
     }
 
-    /**								
+    /**
      * Displays the message on the screen, reads from the keyboard the entered
      * text until a newline character is detected, echoes the text to the screen,
      * and returns its value. Also handles user backspaces.
@@ -76,17 +76,20 @@ class Keyboard {
         var String s;
 
         do Output.printString(message);
-        let s = new.String(64);
+        let s = String.new(64);
 
         // read first char
         let c = Keyboard.readChar();
         // while not newline
         while (~(c = 128)){
 
-            // backspace
+            // backspace 
+            // TODO: fix bug, backspace delete 2 chars from string, but only 1 (as should) from s
+            // this is strange because the function that not behaves correctly is the Output.backSpace
+            // which is built-in
             if (c = 129){
+                do Output.backSpace();
                 do s.eraseLastChar();
-                do Output.backspace();
             } else {
                 do s.appendChar(c);
             }
@@ -95,17 +98,20 @@ class Keyboard {
         }
         do Output.printString(s);
         return s;
-    }   
+    }
 
-    /**								
+    /**
      * Displays the message on the screen, reads from the keyboard the entered
      * text until a newline character is detected, echoes the text to the screen,
      * and returns its integer value (until the first non-digit character in the
-     * entered text is detected). Also handles user backspaces. 
+     * entered text is detected). Also handles user backspaces.
      */
     function int readInt(String message) {
-        var int s;
-        let s = 0;
-        return 0;
+        var char c;
+        var String s;
+
+        let s = String.new(6); // maximum 5 digits and '-' sign
+        let s = Keyboard.readLine(message);
+        return s.intValue();
     }
 }
