@@ -77,7 +77,7 @@ class Output {
         do Output.create(64,30,51,51,59,59,59,27,3,30,0,0);  // @
         do Output.create(63,30,51,51,24,12,12,0,12,12,0,0);  // ?
 
-        do Output.create(65,0,0,0,0,0,0,0,0,0,0,0);          // A ** TO BE FILLED **
+        do Output.create(65,30,12,30,18,18,30,18,51,51,0,0); // A ** TO BE FILLED **
         do Output.create(66,31,51,51,51,31,51,51,51,31,0,0); // B
         do Output.create(67,28,54,35,3,3,3,35,54,28,0,0);    // C
         do Output.create(68,15,27,51,51,51,51,51,27,15,0,0); // D
@@ -149,9 +149,9 @@ class Output {
     // Creates the character map array of the given character index, using the given values.
     function void create(int index, int a, int b, int c, int d, int e,
                          int f, int g, int h, int i, int j, int k) {
-	var Array map;
+    	var Array map;
 
-	let map = Array.new(11);
+    	let map = Array.new(11);
         let charMaps[index] = map;
 
         let map[0] = a;
@@ -184,13 +184,24 @@ class Output {
     function void moveCursor(int i, int j) {
         let cursor_x = j;
         let cursor_y = i;
-        //do Output.printChar(32);
+        do Output.showChar(32);      // clear (print " " at new cursor)
+
         return;
     }
 
     /** Displays the given character at the cursor location,
      *  and advances the cursor one column forward. */
     function void printChar(char c) {
+        do Output.showChar(c);       // draw symbol
+        do Output.advanceCursor();   // advance cursor
+        return;
+
+    }
+
+    /** non API: hiding the logic of printing a 8 bit symbol on
+     *  16 bit word ( 2 symbols at each memory word).
+     * different handling for left/right printing*/
+    function void showChar(char c){
         var Array symbol;
         var int base_address, address, line, mem;
 
@@ -201,29 +212,26 @@ class Output {
 
             // destination cell in screen map
             let address = base_address + (line*32); // next line
-            let mem = Memory.peek();
+            let mem = Memory.peek(address);
 
             if (Output.isEven(cursor_x)){
                 // x is even
                 // left char, clearing left side
                 // adding the 8 bit to the higher byte ( shifting left before moving)
-                let mem = mem & 255 // 0000000011111111
-                let mem = mem + Output.toMsb(symbol[line])
+                let mem = mem & 255; // 0000000011111111
+                let mem = mem + Output.toMsb(symbol[line]);
             } else {
                 // x is odd
                 // right char, clear right side
                 // safely add an 8 bit number to 16bit with only 8msb 
-                let mem = mem & (-256) // 1111111100000000
-                let mem = mem + symbol[line]
+                let mem = mem & (-256); // 1111111100000000
+                let mem = mem + symbol[line];
             }
             do Memory.poke(address, mem);
             let line = line + 1;
         }
-        do Output.advanceCursor();
         return;
-
     }
-
 
     /** nonAPI. */
     function void advanceCursor() {
@@ -243,7 +251,7 @@ class Output {
             // going to next char in same line
             let cursor_x = cursor_x + 1;
         }
-        // print space at cursor
+        // call to print space at cursor
         do Output.moveCursor(cursor_y, cursor_x);
         return;
     }
@@ -263,26 +271,52 @@ class Output {
         return;
     }
 
-    /** Displays the given integer starting at the cursor location,
-     *  and advances the cursor appropriately. */
+    /* Displays the given integer starting at the cursor location,
+     *  and advances the cursor appropriately. */ 
     function void printInt(int i) {
-        var int x;
-        let x=0;
+        var String s;
+        var int numberOfDigits, temp;
+
+        let temp = Math.abs(i);
+        let numberOfDigits = 0;
+
+        // counting the digits to get the necessary length to construct
+        while (temp > 0){
+            let temp = temp/10;
+            let numberOfDigits = numberOfDigits + 1;
+        }
+        // maybe need 1 more digit for the '-' sign
+        if (i < 0){
+            let numberOfDigits = numberOfDigits + 1;
+        }
+
+        let s = String.new(numberOfDigits);
+        do s.setInt(i);
+        do Output.printString(s);
         return;
     }
 
     /** Advances the cursor to the beginning of the next line. */
     function void println() {
-        var int x;
-        let x=0;
+        let cursor_x = 0;
+        if (cursor_y = 22){
+            let cursor_y = 0;
+        } else {
+            let cursor_y = cursor_y + 1;
+        } 
+        do Output.moveCursor(cursor_y, cursor_x);
         return;
     }
 
 
     /** Moves the cursor one column back. */
     function void backSpace() {
-        var int x;
-        let x=0;
+        if (cursor_x = 0){
+            let cursor_x = 0;
+        } else {
+            let cursor_x = cursor_x - 1;
+        } 
+        do Output.moveCursor(cursor_y, cursor_x);
         return;
     }
 
@@ -298,11 +332,12 @@ class Output {
         return binary;
     }
 
+    // opposite ??? how
     function boolean isEven(integer x){
         // if last bit is 0 then its even
         // -2 = 1111111111111110
         // -1 = 1111111111111111
-        if (x | (-2) = (-1)){
+        if (~(x | (-2) = (-1))){
             return false;
         }
         return true;
