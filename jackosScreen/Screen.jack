@@ -111,8 +111,8 @@ class Screen {
         // do Output.printString("x1:");do Output.printInt(x1);do Output.printString("        ");do Output.println();
         // do Output.printString("y1:");do Output.printInt(y1);do Output.printString("        ");do Output.println();
 
-        let dx = x2 - x1; //100
-        let dy = y2 - y1; // 0
+        let dx = Math.abs(x2 - x1); //100
+        let dy = Math.abs(y2 - y1); // 0
         // do Output.printString("dx:");do Output.printInt(dx);do Output.printString("        ");do Output.println();
         // do Output.printString("dy:");do Output.printInt(dy);do Output.printString("        ");do Output.println();
 
@@ -128,24 +128,36 @@ class Screen {
             } else {
                 let diff = dy / dx;
             }
-        }        // do Output.printString("diff:");do Output.printInt(diff);do Output.printString("        ");do Output.println();
+        }        
+        // do Output.printString("diff:");do Output.printInt(diff);do Output.printString("        ");do Output.println();
 
-        while((~(a > dx)) & (~(b > dy))){
+        while((~(Math.abs(a) > dx)) & (~(Math.abs(b) > dy))){
         // do Output.printString("in while");do Output.printString("        ");do Output.println();
             do Screen.drawPixel(x1+a, y1+b);
             if (diff < 0){
                 // right
-                let a = a + 1;
+                if (x2 - x1 > 0){
+                    let a = a + 1;
+                // left
+                } else {
+                    let a = a - 1;
+                }
                 let diff = diff + dy;
             }else{
                 // down
-                let b = b + 1;
-                // let diff = diff - dx;
+                if (y2 - y1 > 0){
+                    let b = b + 1;
+                // up
+                } else {
+                    let b = b - 1;
+                }
                 let diff = diff - dx;
             }
         }
         return;
     }
+
+
 
     /** Draws a filled rectangle whose top left corner is (x1, y1)
      * and bottom right corner is (x2,y2), using the current color. */
