@@ -76,7 +76,7 @@ class Screen {
         let value = Memory.peek( 16384 + address ); 
         let bit = x - (16*column);
         // do Output.printString("bit:");do Output.printInt(bit);do Output.println();
-        let mask = twoToThe[15-bit];        // masking only the bit to modify
+        let mask = twoToThe[bit];        // masking only the bit to modify
         // do Output.printString("mask:");do Output.printInt(mask);do Output.println();
         // do Output.printString("address");do Output.printInt(address);do Output.println();
         // do Output.printString("value b4");do Output.printInt(value);do Output.println();
@@ -97,7 +97,8 @@ class Screen {
         // do Output.printString("y:");do Output.printInt(y);
         // do Output.printString(") ");
         // do Output.println();
-        do Sys.wait(5000);
+        //do Sys.wait(5000);
+        //do Sys.wait(1000);
         return;    
     }
 
@@ -117,16 +118,27 @@ class Screen {
 
         let a = 0;
         let b = 0;
-        let diff = a*dy - b*dx;
-        // do Output.printString("diff:");do Output.printInt(diff);do Output.printString("        ");do Output.println();
+
+        //handle divide by 0
+        if (dx = 0){
+            let diff = 10000;
+        } else {
+            if (dy = 0){
+                let diff = -10000;
+            } else {
+                let diff = dy / dx;
+            }
+        }        // do Output.printString("diff:");do Output.printInt(diff);do Output.printString("        ");do Output.println();
 
         while((~(a > dx)) & (~(b > dy))){
         // do Output.printString("in while");do Output.printString("        ");do Output.println();
             do Screen.drawPixel(x1+a, y1+b);
             if (diff < 0){
+                // right
                 let a = a + 1;
                 let diff = diff + dy;
             }else{
+                // down
                 let b = b + 1;
                 // let diff = diff - dx;
                 let diff = diff - dx;
