@@ -32,7 +32,7 @@ class Sys {
         var int x;
 
         // infinite loop
-        while(0){
+        while(true){
             let x = 0;
         }
         return;
