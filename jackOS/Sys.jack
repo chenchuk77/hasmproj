@@ -23,6 +23,7 @@ class Sys {
 
         // start program execution
         do Main.main();
+        do Sys.halt();
         return;
     }
 
@@ -53,7 +54,6 @@ class Sys {
     function void error(int errorCode) {
         do Output.printString("ERR");
         do Output.printInt(errorCode);
-        do Output.println();
         do Sys.halt();
         return;
 
