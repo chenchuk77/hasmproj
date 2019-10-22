@@ -13,7 +13,7 @@ services:
   frontend:
     image: httpd:2.4
     volumes:
-      - ${PWD}/website/:/usr/local/apache2/htdocs/
+      - ${PWD}/website/:/usr/local/apache2/htdocs
       #- ${PWD}/website/:/usr/local/apache2/website/
     ports:
       - 8888:80
