@@ -1,25 +1,25 @@
-#HAssembler
+# HAssembler
 ## Hack Assembler
 
 This project is a web based Assembler for the [Hack](http://www.marksmath.com/tecs/hack-asm/hack-asm.html) machine language.
 
-##System structure
+## System structure
 The system contains 2 services
 1. Web frontend
 2. Assrmbler backend
 
 
-###Web frontend
+### Web frontend
 Apache web server hosting a Javascript/JQuery page, provides the client with 2 textboxes:
 * input: Hack code
 * output: Binary representation
 
 As soon as the client type a command into the input textbox, the binary representation updated automatically using AJAX.
 
-###Assembler backend
+### Assembler backend
 Springboot service that implements the translation logic. It exposes a REST api /assembler that accepts  Hack code and returns the binary representation as string
 
-##Build the project from source
+## Build the project from source
 When modifying the Assembler backend code, building is required.
 Building the project is done by 2 steps:
 1. compile the backend code to create the target executable using maven
@@ -50,12 +50,12 @@ $ docker-compose up >> hassembler.log 2>&1 &
 
 ```
 
-##DevOps
+## DevOps
 The services isolated using docker containers. 
 Orchestration is done by Docker-compose technology 
 as described in docker-compose.yml file.
 
-##Web client and CORS
+## Web client and CORS
 Since the 2 services are from different origins (domains), 
 the client's browser may block AJAX requests to the backend. 
 There are many ways to bypass the CORS, but since its out of the scope of this project. 
@@ -67,6 +67,6 @@ with some flags to disable some security features, thus allowing CORS:
 ```
 
 
-##TODO
+## TODO
 1. fix CORS
 
