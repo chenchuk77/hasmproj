@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# apache frontend
+docker run --name hasm-frontend \
+           -v $(readlink -f website):/usr/local/apache2/htdocs/ \
+           -dit -p 8888:80 httpd:2.4
+
+# backend
+cd backend
+docker build -t chenchuk/hasm-backend:1.0 .
+docker run --name hasm-backend -d -p 8090:8090 chenchuk/hasm-backend:1.0
+
+
+
+start-backend.sh:HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" http://www.devopskb.net:8090/hi)
+website/js/main.js:            //url : 'http://www.devopskb.net:8090/assemble',
+backend/README.md:* http://hasm.devopskb.net/asm-examples/Add.asm
+
