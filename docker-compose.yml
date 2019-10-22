@@ -1,26 +1,26 @@
 version: "3"
 services:
-  hasm-backend:
+  backend:
     build:
       context: ./backend
       args:
         AAA: 'XXX'
-    image: "chenchuk/hasm-frontend:1.0"
+    image: "chenchuk/hasm-backend:1.0"
     ports:
       - 8090:8090
     restart: always
 
-  hasm-frontend:
+  frontend:
     image: httpd:2.4
     volumes:
-      #- ${PWD}/website/:/usr/local/apache2/htdocs/
-      - ${PWD}/website/:/usr/local/apache2/website/
+      - ${PWD}/website/:/usr/local/apache2/htdocs/
+      #- ${PWD}/website/:/usr/local/apache2/website/
     ports:
       - 8888:80
     environment:
-      #ASSEMBLER_URL: "http://hasm-backend:8090/assemble"
+      #ASSEMBLER_URL: "http://backend:8090/assemble"
       ASSEMBLER_URL: "http://localhost:8090/assemble"
     depends_on:
-      - hasm-backend
+      - backend
 
 
