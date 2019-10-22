@@ -8,3 +8,8 @@ target/*
 .idea/workspace.xml
 *.tst
 **/*.out
+
+chrome-linux.zip
+chrome-linux/*
+chrome-linux
+
