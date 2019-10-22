@@ -16,6 +16,15 @@ docker run --name hasm-backend -d -p 8090:8090 chenchuk/hasm-backend:1.0
 1. download chromium
 2. /opt/chromium-linux/chrome --disable-web-security -–allow-file-access-from-files --user-data-dir /tmp
 
+#working:
+lumos [/opt/scripts]  $ cat ./start-chromium.sh
+#!/bin/bash
+
+/opt/chromium-linux/chrome --disable-web-security -–allow-file-access-from-files --user-data-dir /tmp
+
+lumos [/opt/scripts]  $
+
+
 
 start-backend.sh:HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" http://www.devopskb.net:8090/hi)
 website/js/main.js:            //url : 'http://www.devopskb.net:8090/assemble',
