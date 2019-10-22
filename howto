@@ -10,6 +10,11 @@ cd backend
 docker build -t chenchuk/hasm-backend:1.0 .
 docker run --name hasm-backend -d -p 8090:8090 chenchuk/hasm-backend:1.0
 
+# run client with chromium browser
+# using chromium to bypass CORS problems
+# TODO: try fix CORS
+1. download chromium
+2. /opt/chromium-linux/chrome --disable-web-security -–allow-file-access-from-files --user-data-dir /tmp
 
 
 start-backend.sh:HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" http://www.devopskb.net:8090/hi)
