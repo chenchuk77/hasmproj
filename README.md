@@ -79,4 +79,5 @@ we will use the 2nd option since its good enough when both containers are runnin
 
 ## TODO
 1. fix CORS
+2. fix Rect.asm example on javascript page
 
