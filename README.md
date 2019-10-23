@@ -4,9 +4,11 @@
 This project is a web based Assembler for the [Hack](http://www.marksmath.com/tecs/hack-asm/hack-asm.html) machine language.
 
 ## System structure
-The system contains 2 services
+The system contains 2 services and a test client (browser)
 1. Web frontend
 2. Assrmbler backend
+
+![](HAssembler.png)
 
 
 ### Web frontend
