@@ -35,7 +35,7 @@ $ docker-compose build
 NOTE: changing javascript files should be supported without any rebuilding, 
 this is because the website folder is shared between the host and the frontend container.
 
-##Running HAssembler
+## Running HAssembler
 Running the project 
 
 ```
@@ -51,11 +51,12 @@ $ docker-compose up >> hassembler.log 2>&1 &
 ```
 
 ## DevOps
+### Orchestration
 The services isolated using docker containers. 
 Orchestration is done by Docker-compose technology 
 as described in docker-compose.yml file.
 
-## Web client and CORS
+### Web client and CORS
 Since the 2 services are from different origins (domains), 
 the client's browser may block AJAX requests to the backend. 
 There are many ways to bypass the CORS, but since its out of the scope of this project. 
@@ -65,6 +66,13 @@ with some flags to disable some security features, thus allowing CORS:
 # start a test client
 ./start-client.sh
 ```
+
+## DNS issues
+Since the javascript is running on the client's browser,
+we need to allow calling the backend from the browser. we can allow in 2 ways:
+1. make a proper DNS configuration on the host and configure the javascript AJAX to call the backend
+2. simply configure the javascript to post AJAX to localhost
+we will use the 2nd option since its good enough when both containers are running on the same host
 
 
 ## TODO
